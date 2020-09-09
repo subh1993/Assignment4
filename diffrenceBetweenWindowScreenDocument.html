@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<style>
+.myDiv{
+border: 5px outset brown;
+  background-color: skyblue;    
+  text-align: center;}
+</style>
+ <head>
+    <title>Diffrence between Window Document and Screen</title>
+  </head>
+  <body>
+  <h1>Window</h1>
+  <p>Each browser tab has its own top-level window object. Each &ltiframe&gt (and deprecated &rtframe&gt) element has its own window object too, nested within a parent window. 
+  The window object is supported by all browsers. It represents the browser's window.
+All global JavaScript objects, functions, and variables automatically become members of the window object.
+Global variables are properties of the window object.
+Global functions are methods of the window object.
+Even the document object (of the HTML DOM) is a property of the window object:</br>
+window.document.getElementById("header");</br></br>
+<strong>Some methods of window are as follow:</strong></br></br>
+window.open() - open a new window</br>
+window.close() - close the current window</br>
+window.moveTo() - move the current window</br>
+window.resizeTo() - resize the current window</br>
+</p>
+  <h1>Document</h1>
+  <p>Each window object has a document object to be rendered. 
+  These objects get confused in part because HTML elements are added to the global object when assigned a unique id. 
+  E.g., in the HTML snippet</br>
+  &ltbody&gt </br>
+  &ltp id="holyCow"&gt This is the first paragraph.&lt/p&gt </br>
+&lt/body>&lt/p&gt </br>
+  &lt/body&gt </br>
+  the paragraph element can be referenced by any of the following:</br>
+
+window.holyCow or window["holyCow"]</br>
+document.getElementById("holyCow")</br>
+document.body.firstChild</br>
+document.body.children[0]</br></p>
+<h1>Screen</h1>
+<p>The window object also has a screen object with properties describing the physical display:</br>
+
+screen properties width and height are the full screen</br>
+
+screen properties availWidth and availHeight omit the toolbar</br>
+
+The portion of a screen displaying the rendered document is the viewport in JavaScript, 
+which is potentially confusing because we call an application's portion of the screen a window when talking about interactions with the operating system. 
+The getBoundingClientRect() method of any document element will return an object with top, left, bottom, and right properties describing the location of the element in the viewport.</p>
